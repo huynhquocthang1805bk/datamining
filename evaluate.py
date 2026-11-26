@@ -1,7 +1,7 @@
 import argparse
 from pathlib import Path
 from tgcn.data import load_bundle,make_loaders
-from tgcn.models import make_model
+from train import build_model
 from tgcn.evaluation import evaluate,plot_results
 from tgcn.utility import ROOT,device_for,load_checkpoint,save_json,seed_everything
 
@@ -17,11 +17,10 @@ def main():
     ckpt=load_checkpoint(args.checkpoint,device); cfg=ckpt['config']
     data_dir=args.data_dir or str(ROOT/'data'/cfg['dataset'])
     bundle=load_bundle(data_dir,cfg['dataset'],cfg['seq_len'],cfg['horizon'],
-                       cfg['train_ratio'],cfg['val_ratio'],cfg['interval_min'],cfg['start_time'])
+                       cfg['train_ratio'],cfg['val_ratio'],cfg['interval_min'],cfg['start_time'],
+                       cfg.get('normalization','zscore'))
     loaders=make_loaders(bundle,cfg['seq_len'],cfg['horizon'],cfg['batch_size'])
-    model=make_model(cfg['model'],bundle,cfg['hidden_dim'],cfg['horizon'],
-                    cfg['no_time_features'],cfg['no_adaptive_graph'],cfg['no_residual'],
-                    cfg['dropout'],cfg['graph_embed_dim']).to(device)
+    model=build_model(argparse.Namespace(**cfg),bundle).to(device)
     model.load_state_dict(ckpt['state_dict']);model.eval()
     out=Path(args.output_dir) if args.output_dir else Path(args.checkpoint).parent
     result,true,pred,indices=evaluate(model,loaders['test'],bundle,device,out,cfg['mape_min_speed'])

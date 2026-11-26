@@ -1,0 +1,146 @@
+[
+  {
+    "file": "losloop_gru.pt",
+    "role": "comparison (best-validation seed)",
+    "dataset": "losloop",
+    "model": "gru",
+    "source_run": "results/losloop/main/gru/seed_42",
+    "test_RMSE_all_horizons": 7.487985761071342,
+    "test_MAE_all_horizons": 4.168846976889763
+  },
+  {
+    "file": "losloop_tgcn.pt",
+    "role": "comparison (best-validation seed)",
+    "dataset": "losloop",
+    "model": "tgcn",
+    "source_run": "results/losloop/main/tgcn/seed_2026",
+    "test_RMSE_all_horizons": 7.525169531518376,
+    "test_MAE_all_horizons": 4.366851138615707
+  },
+  {
+    "file": "losloop_tgcn_selfsep.pt",
+    "role": "comparison (best-validation seed)",
+    "dataset": "losloop",
+    "model": "tgcn_selfsep",
+    "source_run": "results/losloop/variants/tgcn_selfsep/seed_42",
+    "test_RMSE_all_horizons": 7.364352887139441,
+    "test_MAE_all_horizons": 4.144636728883028
+  },
+  {
+    "file": "losloop_tgcn_res_time.pt",
+    "role": "comparison (best-validation seed)",
+    "dataset": "losloop",
+    "model": "tgcn_res_time",
+    "source_run": "results/losloop/improve/tgcn_res_time/seed_2026",
+    "test_RMSE_all_horizons": 7.424694415261278,
+    "test_MAE_all_horizons": 4.355318175845801
+  },
+  {
+    "file": "losloop_gwnet_res.pt",
+    "role": "comparison (best-validation seed)",
+    "dataset": "losloop",
+    "model": "gwnet_res",
+    "source_run": "results/losloop/modern/gwnet_res/seed_42",
+    "test_RMSE_all_horizons": 6.478274654823886,
+    "test_MAE_all_horizons": 3.7136019747572764
+  },
+  {
+    "file": "losloop_tgcn_rtsp.pt",
+    "role": "comparison (best-validation seed)",
+    "dataset": "losloop",
+    "model": "tgcn_rtsp",
+    "source_run": "results/losloop/modern/tgcn_rtsp/seed_123",
+    "test_RMSE_all_horizons": 6.6742249558189695,
+    "test_MAE_all_horizons": 4.023148839269247
+  },
+  {
+    "file": "losloop_gru_res_time_seed123.pt",
+    "role": "FINAL model, ensemble member",
+    "dataset": "losloop",
+    "model": "gru_res_time",
+    "source_run": "results/losloop/improve/gru_res_time/seed_123",
+    "test_RMSE_all_horizons": 6.9790421915790875,
+    "test_MAE_all_horizons": 4.119427721479871
+  },
+  {
+    "file": "losloop_gru_res_time_seed2026.pt",
+    "role": "FINAL model, ensemble member",
+    "dataset": "losloop",
+    "model": "gru_res_time",
+    "source_run": "results/losloop/improve/gru_res_time/seed_2026",
+    "test_RMSE_all_horizons": 6.918371087449891,
+    "test_MAE_all_horizons": 3.9965611714194065
+  },
+  {
+    "file": "losloop_gru_res_time_seed42.pt",
+    "role": "FINAL model, ensemble member",
+    "dataset": "losloop",
+    "model": "gru_res_time",
+    "source_run": "results/losloop/improve/gru_res_time/seed_42",
+    "test_RMSE_all_horizons": 7.04529462511785,
+    "test_MAE_all_horizons": 4.08003170487637
+  },
+  {
+    "file": "sztaxi_tgcn.pt",
+    "role": "comparison (best-validation seed)",
+    "dataset": "sztaxi",
+    "model": "tgcn",
+    "source_run": "results/sztaxi/main/tgcn/seed_42",
+    "test_RMSE_all_horizons": 4.225625196353225,
+    "test_MAE_all_horizons": 2.825120096504331
+  },
+  {
+    "file": "sztaxi_stid.pt",
+    "role": "comparison (best-validation seed)",
+    "dataset": "sztaxi",
+    "model": "stid",
+    "source_run": "results/sztaxi/modern/stid/seed_123",
+    "test_RMSE_all_horizons": 4.051626112111049,
+    "test_MAE_all_horizons": 2.7222742779233884
+  },
+  {
+    "file": "sztaxi_gru_seed123.pt",
+    "role": "FINAL model, ensemble member",
+    "dataset": "sztaxi",
+    "model": "gru",
+    "source_run": "results/sztaxi/main/gru/seed_123",
+    "test_RMSE_all_horizons": 4.173165765767921,
+    "test_MAE_all_horizons": 2.765566226501808
+  },
+  {
+    "file": "sztaxi_gru_seed2026.pt",
+    "role": "FINAL model, ensemble member",
+    "dataset": "sztaxi",
+    "model": "gru",
+    "source_run": "results/sztaxi/main/gru/seed_2026",
+    "test_RMSE_all_horizons": 4.1813473411659965,
+    "test_MAE_all_horizons": 2.7797494401853093
+  },
+  {
+    "file": "sztaxi_gru_seed42.pt",
+    "role": "FINAL model, ensemble member",
+    "dataset": "sztaxi",
+    "model": "gru",
+    "source_run": "results/sztaxi/main/gru/seed_42",
+    "test_RMSE_all_horizons": 4.182392149025757,
+    "test_MAE_all_horizons": 2.779004005618764
+  },
+  {
+    "file": "losloop_lgbm/",
+    "role": "LightGBM v2, 127 leaves (best single model by validation)",
+    "dataset": "losloop",
+    "model": "lgbm_best",
+    "source_run": "results/losloop/modern/lgbm_best/seed_42",
+    "test_RMSE_all_horizons": 6.466214810131454,
+    "test_MAE_all_horizons": 3.593457687550398
+  },
+  {
+    "file": "sztaxi_lgbm/",
+    "role": "LightGBM v2, 127 leaves (best single model by validation)",
+    "dataset": "sztaxi",
+    "model": "lgbm_best",
+    "source_run": "results/sztaxi/modern/lgbm_best/seed_42",
+    "test_RMSE_all_horizons": 4.052997585247275,
+    "test_MAE_all_horizons": 2.7020488777330183
+  }
+]

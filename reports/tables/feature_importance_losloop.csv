@@ -1,0 +1,79 @@
+feature,group,lag,ΔRMSE,ΔRMSE_std,n_nodes,model,RMSE_base
+lag 1 (5 phút trước),lag,1.0,4.786268711090088,,,gru,7.4879856
+lag 2 (10 phút trước),lag,2.0,1.1074024438858032,,,gru,7.4879856
+lag 3 (15 phút trước),lag,3.0,0.9125630259513855,,,gru,7.4879856
+lag 4 (20 phút trước),lag,4.0,0.7766688466072083,,,gru,7.4879856
+lag 5 (25 phút trước),lag,5.0,0.6885001063346863,,,gru,7.4879856
+lag 6 (30 phút trước),lag,6.0,0.6618916392326355,,,gru,7.4879856
+lag 7 (35 phút trước),lag,7.0,0.5140935778617859,,,gru,7.4879856
+lag 8 (40 phút trước),lag,8.0,0.2970636785030365,,,gru,7.4879856
+lag 9 (45 phút trước),lag,9.0,0.3246340751647949,,,gru,7.4879856
+lag 10 (50 phút trước),lag,10.0,0.3412087857723236,,,gru,7.4879856
+lag 11 (55 phút trước),lag,11.0,0.22973394393920898,,,gru,7.4879856
+lag 12 (60 phút trước),lag,12.0,0.0656525269150734,,,gru,7.4879856
+lịch sử của chính nút,spatial,,6.5550642013549805,4.4684319496154785,40.0,gru,7.4879856
+láng giềng 1-hop,spatial,,0.0,0.0,40.0,gru,7.4879856
+nút ngẫu nhiên xa (≥4 hop),spatial,,0.0,0.0,40.0,gru,7.4879856
+lag 1 (5 phút trước),lag,1.0,6.593025207519531,,,tgcn,7.4816008
+lag 2 (10 phút trước),lag,2.0,1.4886833429336548,,,tgcn,7.4816008
+lag 3 (15 phút trước),lag,3.0,0.8117014765739441,,,tgcn,7.4816008
+lag 4 (20 phút trước),lag,4.0,0.7710679173469543,,,tgcn,7.4816008
+lag 5 (25 phút trước),lag,5.0,0.8744780421257019,,,tgcn,7.4816008
+lag 6 (30 phút trước),lag,6.0,1.0485824346542358,,,tgcn,7.4816008
+lag 7 (35 phút trước),lag,7.0,1.1252622604370117,,,tgcn,7.4816008
+lag 8 (40 phút trước),lag,8.0,1.153742790222168,,,tgcn,7.4816008
+lag 9 (45 phút trước),lag,9.0,1.0485318899154663,,,tgcn,7.4816008
+lag 10 (50 phút trước),lag,10.0,1.0226564407348633,,,tgcn,7.4816008
+lag 11 (55 phút trước),lag,11.0,1.045654296875,,,tgcn,7.4816008
+lag 12 (60 phút trước),lag,12.0,0.43307527899742126,,,tgcn,7.4816008
+lịch sử của chính nút,spatial,,3.5930819511413574,2.5685982704162598,40.0,tgcn,7.4816008
+láng giềng 1-hop,spatial,,2.1216118335723877,2.0028388500213623,40.0,tgcn,7.4816008
+nút ngẫu nhiên xa (≥4 hop),spatial,,-1.0585785275907256e-05,0.0009689217549748719,40.0,tgcn,7.4816008
+lag 1 (5 phút trước),lag,1.0,3.409899950027466,,,gru_res_time,7.045295
+lag 2 (10 phút trước),lag,2.0,0.4559968411922455,,,gru_res_time,7.045295
+lag 3 (15 phút trước),lag,3.0,0.541817843914032,,,gru_res_time,7.045295
+lag 4 (20 phút trước),lag,4.0,0.34189414978027344,,,gru_res_time,7.045295
+lag 5 (25 phút trước),lag,5.0,0.3914051055908203,,,gru_res_time,7.045295
+lag 6 (30 phút trước),lag,6.0,0.4705672264099121,,,gru_res_time,7.045295
+lag 7 (35 phút trước),lag,7.0,0.43158388137817383,,,gru_res_time,7.045295
+lag 8 (40 phút trước),lag,8.0,0.3561069071292877,,,gru_res_time,7.045295
+lag 9 (45 phút trước),lag,9.0,0.3582848012447357,,,gru_res_time,7.045295
+lag 10 (50 phút trước),lag,10.0,0.2394099235534668,,,gru_res_time,7.045295
+lag 11 (55 phút trước),lag,11.0,0.23995082080364227,,,gru_res_time,7.045295
+lag 12 (60 phút trước),lag,12.0,0.1390080451965332,,,gru_res_time,7.045295
+"đặc trưng thời gian (giờ, thứ)",time,,1.8504472970962524,,,gru_res_time,7.045295
+lịch sử của chính nút,spatial,,6.060635089874268,4.154124736785889,40.0,gru_res_time,7.045295
+láng giềng 1-hop,spatial,,0.0,0.0,40.0,gru_res_time,7.045295
+nút ngẫu nhiên xa (≥4 hop),spatial,,0.0,0.0,40.0,gru_res_time,7.045295
+lag 1 (5 phút trước),lag,1.0,4.3306121826171875,,,tgcn_res_time,7.3503075
+lag 2 (10 phút trước),lag,2.0,2.4812119007110596,,,tgcn_res_time,7.3503075
+lag 3 (15 phút trước),lag,3.0,0.6827545166015625,,,tgcn_res_time,7.3503075
+lag 4 (20 phút trước),lag,4.0,0.5749981999397278,,,tgcn_res_time,7.3503075
+lag 5 (25 phút trước),lag,5.0,0.3793506622314453,,,tgcn_res_time,7.3503075
+lag 6 (30 phút trước),lag,6.0,0.30232128500938416,,,tgcn_res_time,7.3503075
+lag 7 (35 phút trước),lag,7.0,0.27802515029907227,,,tgcn_res_time,7.3503075
+lag 8 (40 phút trước),lag,8.0,0.2970062792301178,,,tgcn_res_time,7.3503075
+lag 9 (45 phút trước),lag,9.0,0.33505868911743164,,,tgcn_res_time,7.3503075
+lag 10 (50 phút trước),lag,10.0,0.22237586975097656,,,tgcn_res_time,7.3503075
+lag 11 (55 phút trước),lag,11.0,0.10006173700094223,,,tgcn_res_time,7.3503075
+lag 12 (60 phút trước),lag,12.0,0.08927170187234879,,,tgcn_res_time,7.3503075
+"đặc trưng thời gian (giờ, thứ)",time,,1.8329280614852905,,,tgcn_res_time,7.3503075
+lịch sử của chính nút,spatial,,5.6725754737854,3.7491161823272705,40.0,tgcn_res_time,7.3503075
+láng giềng 1-hop,spatial,,0.5074958801269531,0.5752753615379333,40.0,tgcn_res_time,7.3503075
+nút ngẫu nhiên xa (≥4 hop),spatial,,-5.423426773631945e-05,0.0010248280595988035,40.0,tgcn_res_time,7.3503075
+lag 1 (5 phút trước),lag,1.0,4.0704193115234375,,,tgcn_selfsep_res_time,7.1716
+lag 2 (10 phút trước),lag,2.0,0.5467238426208496,,,tgcn_selfsep_res_time,7.1716
+lag 3 (15 phút trước),lag,3.0,0.41195425391197205,,,tgcn_selfsep_res_time,7.1716
+lag 4 (20 phút trước),lag,4.0,0.3688848912715912,,,tgcn_selfsep_res_time,7.1716
+lag 5 (25 phút trước),lag,5.0,0.33363834023475647,,,tgcn_selfsep_res_time,7.1716
+lag 6 (30 phút trước),lag,6.0,0.4257257878780365,,,tgcn_selfsep_res_time,7.1716
+lag 7 (35 phút trước),lag,7.0,0.48943981528282166,,,tgcn_selfsep_res_time,7.1716
+lag 8 (40 phút trước),lag,8.0,0.4991935193538666,,,tgcn_selfsep_res_time,7.1716
+lag 9 (45 phút trước),lag,9.0,0.4402041435241699,,,tgcn_selfsep_res_time,7.1716
+lag 10 (50 phút trước),lag,10.0,0.3891679346561432,,,tgcn_selfsep_res_time,7.1716
+lag 11 (55 phút trước),lag,11.0,0.26748308539390564,,,tgcn_selfsep_res_time,7.1716
+lag 12 (60 phút trước),lag,12.0,0.12978410720825195,,,tgcn_selfsep_res_time,7.1716
+"đặc trưng thời gian (giờ, thứ)",time,,1.60646390914917,,,tgcn_selfsep_res_time,7.1716
+lịch sử của chính nút,spatial,,5.501971244812012,3.7031311988830566,40.0,tgcn_selfsep_res_time,7.1716
+láng giềng 1-hop,spatial,,0.237441748380661,0.4944196343421936,40.0,tgcn_selfsep_res_time,7.1716
+nút ngẫu nhiên xa (≥4 hop),spatial,,-1.410841923643602e-05,0.00014313733845483512,40.0,tgcn_selfsep_res_time,7.1716

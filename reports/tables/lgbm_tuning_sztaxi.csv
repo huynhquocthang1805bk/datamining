@@ -1,0 +1,2 @@
+Cấu hình LightGBM (seed 42),RMSE val,RMSE test,MAE test
+"v1, 63 lá, lr 0.05",3.896,4.522,3.198

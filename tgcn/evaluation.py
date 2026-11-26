@@ -24,6 +24,9 @@ def evaluate(model, loader, bundle, device, output_dir, min_mape_denom=5.,
     true=inverse_transform(true_scaled,bundle)
     pred=inverse_transform(pred_scaled,bundle)
     scores=horizon_metrics(true,pred,bundle.interval_min,min_mape_denom)
+    if (true == 0).any():  # SZ-taxi: 0 = no observation -> also report masked metrics
+        scores['masked_nonzero'] = horizon_metrics(true,pred,bundle.interval_min,
+                                                   min_mape_denom,mask_zero=True)
     scores['n_samples'] = int(len(t))
     scores['n_nodes'] = int(len(bundle.sensor_ids))
     output_dir=Path(output_dir); output_dir.mkdir(parents=True,exist_ok=True)
@@ -44,7 +47,7 @@ def plot_results(true,pred,steps,interval_min,output_dir,sensor_idx=0):
         raise ValueError('plot sensor index out of range')
     # Plot for fixed horizon step 1. Each marker is one consecutive timestamp,
     # thus the line represents genuine time-series, not arbitrary samples.
-    n=min(250,len(steps))
+    n=min(400,len(steps))
     x=steps[:n]*interval_min/60
     fig,ax=plt.subplots(figsize=(11,4))
     ax.plot(x,true[:n,0,sensor_idx],label='Actual',linewidth=1.6)

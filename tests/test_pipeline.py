@@ -45,6 +45,44 @@ class PipelineTests(unittest.TestCase):
                          no_adaptive_graph=True,no_residual=True)
         self.assertEqual(tuple(model(x[None],t[None]).shape),(1,2,5))
 
+    def test_new_models_and_switches(self):
+        ds=TrafficWindows(self.bundle,'train',8,2)
+        x,t,_,_=ds[0]
+        for name,kw in (('gcn',{}),('gru',{'time_features':True,'residual':True}),
+                        ('tgcn',{'time_features':True,'residual':True}),('tgcn',{'no_graph':True})):
+            model=make_model(name,self.bundle,hidden_dim=8,horizon=2,seq_len=8,**kw)
+            self.assertEqual(tuple(model(x[None],t[None]).shape),(1,2,5))
+        # residual with zero head == persistence
+        m=make_model('tgcn',self.bundle,hidden_dim=8,horizon=2,residual=True)
+        for prm in m.head.parameters(): torch.nn.init.zeros_(prm)
+        out=m(x[None],t[None])
+        self.assertTrue(torch.allclose(out[0,0],x[-1,:,0]))
+
+    def test_sparse_equals_dense(self):
+        ds=TrafficWindows(self.bundle,'train',8,2)
+        x,t,_,_=ds[0]
+        m=make_model('tgcn',self.bundle,hidden_dim=8,horizon=2)
+        sparse=m(x[None],t[None])
+        m.used_adjacency=lambda: m.adj
+        self.assertTrue(torch.allclose(sparse,m(x[None],t[None]),atol=1e-5))
+
+    def test_paper_protocol_split(self):
+        b=load_bundle(self.path,'demo',seq_len=8,horizon=2,protocol='paper')
+        T=len(b.values)
+        self.assertEqual(b.splits['val'],b.splits['test'])
+        self.assertEqual(b.splits['test'][0],int(T*.8)+8)   # context inside the test part
+        self.assertAlmostEqual(float(b.scaled.max()),1.0,places=5)
+
+    def test_metrics_paper_definitions(self):
+        y=np.array([[[1.,2.],[3.,4.]]]); p=y+np.array([[[.5,-.5],[0.,1.]]])
+        m=horizon_metrics(y,p,5)
+        e=(p-y).ravel(); yy=y.ravel()
+        self.assertAlmostEqual(m['overall']['Accuracy'],1-np.linalg.norm(e)/np.linalg.norm(yy))
+        self.assertAlmostEqual(m['overall']['R2'],1-(e**2).sum()/((yy-yy.mean())**2).sum())
+        self.assertAlmostEqual(m['cumulative']['10min']['RMSE'],m['overall']['RMSE'])
+        self.assertAlmostEqual(horizon_metrics(np.array([[[0.,2.]]]),np.array([[[5.,2.]]]),5,
+                                               mask_zero=True)['overall']['MAE'],0.0)
+
     def test_metrics(self):
         true=np.ones((2,2,5),dtype=np.float32)*10
         p=true+2

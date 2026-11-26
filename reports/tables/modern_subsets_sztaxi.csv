@@ -1,0 +1,61 @@
+model,horizon,subset,MAE
+naive,15 phút,tất cả,4.137328147888184
+naive,15 phút,cao điểm,4.104263782501221
+naive,15 phút,ngoài cao điểm,4.14376974105835
+naive,15 phút,kẹt xe (v<10),3.5782837867736816
+naive,15 phút,biến động mạnh (Δ>10),14.317251205444336
+naive,60 phút,tất cả,4.364062786102295
+naive,60 phút,cao điểm,4.407035827636719
+naive,60 phút,ngoài cao điểm,4.355688571929932
+naive,60 phút,kẹt xe (v<10),3.752091646194458
+naive,60 phút,biến động mạnh (Δ>10),14.4617919921875
+tgcn,15 phút,tất cả,3.2828891277313232
+tgcn,15 phút,cao điểm,3.265322685241699
+tgcn,15 phút,ngoài cao điểm,3.2863147258758545
+tgcn,15 phút,kẹt xe (v<10),2.863710641860962
+tgcn,15 phút,biến động mạnh (Δ>10),8.492122650146484
+tgcn,60 phút,tất cả,3.396108388900757
+tgcn,60 phút,cao điểm,3.418062210083008
+tgcn,60 phút,ngoài cao điểm,3.3918261528015137
+tgcn,60 phút,kẹt xe (v<10),2.9728639125823975
+tgcn,60 phút,biến động mạnh (Δ>10),8.375387191772461
+gru_res_time,15 phút,tất cả,3.1914334297180176
+gru_res_time,15 phút,cao điểm,3.1752586364746094
+gru_res_time,15 phút,ngoài cao điểm,3.194587469100952
+gru_res_time,15 phút,kẹt xe (v<10),2.7706406116485596
+gru_res_time,15 phút,biến động mạnh (Δ>10),9.006353378295898
+gru_res_time,60 phút,tất cả,3.328467607498169
+gru_res_time,60 phút,cao điểm,3.3439993858337402
+gru_res_time,60 phút,ngoài cao điểm,3.3254377841949463
+gru_res_time,60 phút,kẹt xe (v<10),2.938508987426758
+gru_res_time,60 phút,biến động mạnh (Δ>10),8.733445167541504
+gru_rtp,15 phút,tất cả,3.177123785018921
+gru_rtp,15 phút,cao điểm,3.143808603286743
+gru_rtp,15 phút,ngoài cao điểm,3.1836206912994385
+gru_rtp,15 phút,kẹt xe (v<10),2.8283607959747314
+gru_rtp,15 phút,biến động mạnh (Δ>10),8.481314659118652
+gru_rtp,60 phút,tất cả,3.3099365234375
+gru_rtp,60 phút,cao điểm,3.295276165008545
+gru_rtp,60 phút,ngoài cao điểm,3.3127963542938232
+gru_rtp,60 phút,kẹt xe (v<10),3.0123021602630615
+gru_rtp,60 phút,biến động mạnh (Δ>10),8.381967544555664
+lgbm_best,15 phút,tất cả,3.119997262954712
+lgbm_best,15 phút,cao điểm,3.079129457473755
+lgbm_best,15 phút,ngoài cao điểm,3.1279666423797607
+lgbm_best,15 phút,kẹt xe (v<10),2.6884922981262207
+lgbm_best,15 phút,biến động mạnh (Δ>10),8.517926216125488
+lgbm_best,60 phút,tất cả,3.1949658393859863
+lgbm_best,60 phút,cao điểm,3.1677494049072266
+lgbm_best,60 phút,ngoài cao điểm,3.200274705886841
+lgbm_best,60 phút,kẹt xe (v<10),2.7741801738739014
+lgbm_best,60 phút,biến động mạnh (Δ>10),8.094450950622559
+blend,15 phút,tất cả,3.0633203983306885
+blend,15 phút,cao điểm,3.0266456604003906
+blend,15 phút,ngoài cao điểm,3.070472240447998
+blend,15 phút,kẹt xe (v<10),2.69474196434021
+blend,15 phút,biến động mạnh (Δ>10),8.320054054260254
+blend,60 phút,tất cả,3.136749744415283
+blend,60 phút,cao điểm,3.1168954372406006
+blend,60 phút,ngoài cao điểm,3.140623092651367
+blend,60 phút,kẹt xe (v<10),2.778578996658325
+blend,60 phút,biến động mạnh (Δ>10),7.901696681976318

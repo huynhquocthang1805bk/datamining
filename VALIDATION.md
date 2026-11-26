@@ -1,15 +1,7 @@
-# Ghi nhận kiểm thử khi đóng gói — 16/11/2026
+# Ghi nhận kiểm thử — 23/11/2026
 
-## Đã thực hiện trong môi trường tạo ZIP
-- `python -m unittest discover -s tests -v`: **4/4 test pass** (cửa sổ thời gian, chỉ số, kích thước tensor/gradient, ablation).
-- Chạy GRU / T-GCN / T-GCN+ trên bộ dữ liệu **GIẢ LẬP** 520×10, 2 epochs, 3 train batches/epoch và 1 validation batch: cả 3 chạy xong, tạo checkpoint và các biểu đồ.
-- `python evaluate.py` với checkpoint T-GCN: đọc và tính lại chỉ số thành công.
-- `python compare.py` và `python make_report.py`: tạo bảng tổng hợp và mẫu báo cáo Word.
-- Render Word ra ảnh để kiểm tra bố cục, font và không bị cắt nội dung.
-- Dữ liệu thật từ GitHub tác giả **không thể tải trong môi trường đóng gói** do giới hạn truy cập mạng. `download_data.py` được soạn theo URL raw chính thức đã đối chiếu; cần chạy và kiểm thử lại trên thiết bị có internet.
-
-## Điều kiện quan trọng
-- Không coi kết quả 2-epoch/partial-batch trên demo là kết quả khoa học.
-- Không báo cáo rằng biến thể cải tiến tốt hơn trên Los-loop hoặc SZ-taxi trước khi thực nghiệm thật.
-- Không trích dẫn số MAE/RMSE demo trong phần kết quả báo cáo học thuật.
-- Mỗi run thực có `metrics.json` và `config.json`; báo cáo tự sinh loại trừ các run có `--max-train-batches` hoặc `--max-val-batches`.
+- `python -m unittest discover -s tests -v`: **8/8 test pass** (rò rỉ nhãn giữa các split, kích thước/gradient của mọi mô hình và tùy chọn, residual với đầu ra 0 = persistence, sparse = dense, giao thức paper, định nghĩa Accuracy/R²/Var và cumulative, mask số 0).
+- Dữ liệu **thật** Los-loop và SZ-taxi tải từ repo tác giả; mốc thời gian dựng lại được kiểm chứng bằng hồ sơ giờ cao điểm (Hình 1 của báo cáo).
+- ≈ 60 run huấn luyện đầy đủ (CPU 4 nhân), 3 seed cho mọi mô hình chính; mọi bảng trong báo cáo được sinh từ `metrics.json` bởi `tools/build_report.py`, không chép tay.
+- Kiểm tra hợp lệ của phân tích: xáo trộn láng giềng có tác động đúng bằng 0 với GRU (không dùng đồ thị) và với nút xa; saliency của GCN 2 lớp bằng 0 từ hop thứ 3; GRU tái lập Bảng 1 (giao thức tác giả: RMSE 5.233, Accuracy 0.9109, R² 0.8574 so với 5.218 / 0.9109 / 0.8576).
+- Giới hạn: Los-loop chỉ 7 ngày; ≤ 120 epoch (giao thức chính), 300/150 epoch (tái lập giao thức tác giả) so với 3000 của tác giả.

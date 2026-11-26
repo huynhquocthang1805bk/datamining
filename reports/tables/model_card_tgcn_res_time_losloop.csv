@@ -1,0 +1,8 @@
+tensor,shape,n,learned,role
+adj,207x207,42849,False,"Â = D^-1/2 (A+I) D^-1/2 (cố định, không học)"
+cell.gates.linear.weight,128x69,8832,True,"W_g: GCN trong cổng reset r và update u, [2H, 1(+4)+H]"
+cell.gates.linear.bias,128,128,True,b_g: bias cổng (khởi tạo 1.0 như mã tác giả)
+cell.candidate.linear.weight,64x69,4416,True,"W_c: GCN tạo trạng thái ứng viên c, [H, 1(+4)+H]"
+cell.candidate.linear.bias,64,64,True,b_c
+head.weight,12x64,768,True,W_out: ánh xạ trạng thái ẩn → H bước dự báo
+head.bias,12,12,True,b_out

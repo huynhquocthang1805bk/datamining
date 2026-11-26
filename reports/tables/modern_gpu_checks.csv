@@ -1,0 +1,12 @@
+dataset,kiểm tra,kết quả
+losloop,RMSE tăng theo tầm dự báo ở mọi run (dung sai 0.05),21/21 run đạt
+losloop,Graph WaveNet (gọn): CPU (1 seed) vs GPU (3 seed),CPU 6.860; GPU 6.693 ± 0.061
+losloop,Graph WaveNet + res (gọn): CPU (3 seed) vs GPU (3 seed),CPU 6.589 ± 0.117; GPU 6.565 ± 0.052
+sztaxi,tóm tắt của bạn = tính lại từ từng run (gwnet),khớp
+sztaxi,tóm tắt của bạn = tính lại từ từng run (gwnet_res),khớp
+sztaxi,tóm tắt của bạn = tính lại từ từng run (gwnet_full),khớp
+sztaxi,tóm tắt của bạn = tính lại từ từng run (gwnet_full_res),khớp
+sztaxi,tóm tắt của bạn = tính lại từ từng run (staeformer),khớp
+sztaxi,tóm tắt của bạn = tính lại từ từng run (staeformer_full),khớp
+sztaxi,tóm tắt của bạn = tính lại từ từng run (staeformer_full_res),khớp
+sztaxi,RMSE tăng theo tầm dự báo ở mọi run (dung sai 0.05),21/21 run đạt

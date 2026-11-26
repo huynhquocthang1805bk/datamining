@@ -12,7 +12,7 @@ def seed_everything(seed):
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed)
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(seed)
-    torch.set_num_threads(min(os.cpu_count() or 1, 4))
+    torch.set_num_threads(int(os.environ.get('TGCN_THREADS', min(os.cpu_count() or 1, 4))))
 
 
 def device_for(request):
